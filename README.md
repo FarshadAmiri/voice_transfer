@@ -1,39 +1,26 @@
 # Voice Transfer
 
-A simple voice cloning project based on [Seed-VC](https://github.com/Plachtaa/seed-vc).
+Voice cloning microservice based on [Seed-VC](https://github.com/Plachtaa/seed-vc).
 
-## Overview
+## Quick Start
 
-This project provides an easy-to-use interface for voice-to-voice conversion using the Seed-VC model.
-
-## Installation
-
-1. Clone this repository
-2. Install dependencies:
 ```bash
-pip install -r requirements.txt
+# Install dependencies
+pip install -r requirements_api.txt
+
+# Run server
+python manage.py runserver 0.0.0.0:8001
 ```
 
-## Usage
+## API Usage
 
-Use the `easy_voice_clone.py` module for simple voice cloning:
-
-```python
-from easy_voice_clone import clone_voice
-
-clone_voice(
-    source_audio="path/to/source.wav",
-    target_audio="path/to/target.wav",
-    output_path="path/to/output.wav"
-)
+```bash
+curl -X POST http://localhost:8001/api/clone/ \
+  -F "source_audio=@source.wav" \
+  -F "target_audio=@target.wav" \
+  --output output.wav
 ```
 
-## Requirements
+See `API_README.md` for detailed documentation.
 
-- Python 3.10
-- PyTorch with CUDA support
-- See `requirements.txt` for full list of dependencies
-
-## Credits
-
-This project is based on [Seed-VC](https://github.com/Plachtaa/seed-vc) by Plachtaa.
+**Requirements:** Python 3.10, CUDA GPU (recommended)
