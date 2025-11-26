@@ -2,7 +2,7 @@
 
 Voice cloning microservice based on [Seed-VC](https://github.com/Plachtaa/seed-vc).
 
-## What It Does
+## Zero-Shot Voice Conversion via Speech Disentanglement
 
 Transfers voice characteristics from one speaker to another while preserving the original speech content. Uses a diffusion-based generative model with speech disentanglement to separate content (what is said) from timbre (who says it), enabling high-quality voice conversion without training data (zero-shot).
 
